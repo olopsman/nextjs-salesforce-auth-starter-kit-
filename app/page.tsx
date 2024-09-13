@@ -1,4 +1,4 @@
-import jsforce, { OAuth2 } from "jsforce";
+import { OAuth2 } from "jsforce";
 import Salesforce from "./components/salesforce";
 
 export default async function Home() {
