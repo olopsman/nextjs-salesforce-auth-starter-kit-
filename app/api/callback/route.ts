@@ -1,6 +1,8 @@
-import type { NextRequest } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server'
 export async function POST(req: NextRequest) {
-    
-    console.log("Request: ", req);
+    const body = await req.json();
+  console.log({ body });
+
     //store this in the cookie
+    return NextResponse.json({ message: 'Operation successful' }, { status: 200 });
 }

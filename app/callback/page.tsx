@@ -5,6 +5,8 @@ import { useSearchParams } from "next/navigation";
 import { useEffect } from "react";
 
 async function callbackHandler(code: string) {
+  console.log("Code: ", code);
+
   try {
     const req = await fetch("http://localhost:3000/api/callback", {
       method: "POST",
