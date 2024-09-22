@@ -5,7 +5,7 @@ export default async function Page() {
   const conn = new jsforce.Connection({
     oauth2: {
       // you can change loginUrl to connect to sandbox or prerelease env.
-      loginUrl: "https://test.salesforce.com",
+      loginUrl: process.env.LOGIN_URL,
       clientId: process.env.CLIENT_ID,
       clientSecret: process.env.CLIENT_SECRET,
       redirectUri: "http://localhost:3000/callback",

@@ -1,13 +1,13 @@
 import jsforce from "jsforce";
 
 export default async function Page() {
-  console.log(process.env.PASSWORD!);
-  /* SOAP LOGIN */
   const conn = new jsforce.Connection({
-    loginUrl: process.env.LOGIN_URL,
+    instanceUrl: process.env.INSTANCE_URL,
+    serverUrl: process.env.SERVER_URL,
+    sessionId: process.env.SESSION_ID,
   });
-  await conn.login(process.env.USERNAME!, process.env.PASSWORD!);
 
+  //system.debug(userInfo.getSessionId());
   const result = await conn.query("SELECT Id, Name FROM Account LIMIT 10");
   return (
     <div className="p-1">

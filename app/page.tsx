@@ -1,10 +1,10 @@
-import jsforce, { OAuth2 } from "jsforce";
+import { OAuth2 } from "jsforce";
 import Salesforce from "./components/salesforce";
 
 export default async function Home() {
   /* OAuth2.0 */
   const oauth2 = new OAuth2({
-    loginUrl: "https://test.salesforce.com",
+    loginUrl: process.env.LOGIN_URL,
     clientId: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
     redirectUri: "http://localhost:3001/api/callback",
