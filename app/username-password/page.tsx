@@ -4,7 +4,7 @@ export default async function Page() {
   console.log(process.env.PASSWORD!);
   /* SOAP LOGIN */
   const conn = new jsforce.Connection({
-    loginUrl: process.env.LOGIN_URL,
+    loginUrl: process.env.SALESFORCE_LOGIN_URL,
   });
   await conn.login(process.env.USERNAME!, process.env.PASSWORD!);
 

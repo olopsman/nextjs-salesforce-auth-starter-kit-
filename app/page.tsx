@@ -1,24 +1,16 @@
-import { OAuth2 } from "jsforce";
-import Salesforce from "./components/salesforce";
-
-export default async function Home() {
-  /* OAuth2.0 */
-  const oauth2 = new OAuth2({
-    loginUrl: process.env.LOGIN_URL,
-    clientId: process.env.CLIENT_ID,
-    clientSecret: process.env.CLIENT_SECRET,
-    redirectUri: "http://localhost:3001/api/callback",
-  });
-
-  const url = oauth2.getAuthorizationUrl({
-    scope: "api full web",
-  });
-
-  console.log("URL: ", url);
-
+import Login from "./components/login";
+export default function Home() {
   return (
-    <div>
-      <Salesforce url={url} />
+    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+      {/* login to Salesfor */}
+      <div className="grid grid-cols-1 gap-4">
+        <h1 className="text-3xl font-bold text-center">Login to Salesforce</h1>
+        <p className="text-center">
+          You are about to login to Salesforce. Click the button below to
+          continue.
+        </p>
+        <Login />
+      </div>
     </div>
   );
 }

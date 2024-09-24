@@ -5,10 +5,10 @@ export default async function Page() {
   const conn = new jsforce.Connection({
     oauth2: {
       // you can change loginUrl to connect to sandbox or prerelease env.
-      loginUrl: process.env.LOGIN_URL,
-      clientId: process.env.CLIENT_ID,
-      clientSecret: process.env.CLIENT_SECRET,
-      redirectUri: "http://localhost:3000/callback",
+      loginUrl: process.env.SALESFORCE_LOGIN_URL,
+      clientId: process.env.SALESFORCE_CLIENT_ID,
+      clientSecret: process.env.SALESFORCE_CLIENT_SECRET,
+      redirectUri: process.env.SALESFORCE_REDIRECT_URI,
     },
   });
   const userInfo = await conn.login(
