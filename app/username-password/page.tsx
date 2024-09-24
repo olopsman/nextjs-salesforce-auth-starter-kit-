@@ -8,7 +8,7 @@ export default async function Page() {
   });
   await conn.login(process.env.USERNAME!, process.env.PASSWORD!);
 
-  const result = await conn.query("SELECT Id, Name FROM Account LIMIT 10");
+  const result = await conn.query("SELECT Id, Name FROM Account LIMIT 15");
   return (
     <div className="p-1">
       <h1 className="text-lg font-bold">Username Password Flow</h1>

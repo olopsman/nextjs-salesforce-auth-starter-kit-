@@ -5,5 +5,11 @@ export default function Login() {
     window.location.href = "/api/oauth2/auth"; // Redirects to the auth API route
   };
 
-  return <button onClick={handleLogin}>Login with Salesforce</button>;
+  return (
+    <div>
+      <button onClick={handleLogin}>
+        Oauth2 Web Server Flow with Salesforce
+      </button>
+    </div>
+  );
 }
